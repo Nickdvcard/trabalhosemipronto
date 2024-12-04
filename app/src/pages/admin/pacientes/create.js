@@ -101,6 +101,12 @@ const handleCityChange = (event) => {
   };
 
   const handleCreatePaciente = async () => {
+
+    if (!paciente.first_name || !paciente.last_name || !paciente.teacher || !paciente.condition || !paciente.uf || !paciente.cidade || !paciente.bairro) {
+      setMessage({ message: "Todos os campos devem ser preenchidos!", status: "error" });
+      return;
+    }
+
     try {
       const response = await Axios.post(API_URL, paciente);
       setMessage({ message: "Paciente salvo com sucesso!", status: "ok" });

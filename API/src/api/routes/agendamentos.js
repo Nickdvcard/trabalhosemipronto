@@ -284,6 +284,40 @@ router.put('/id/:id', async (req, res) => {
     }
 });
 
+router.get('/idProfissionais/dia/:id/:data?', (req, res) => {
+    const profissionalId = req.params.id || 0;  // Pega o ID do profissional
+    const dataFiltro = req.params.data || '';  // Pega a data do parâmetro (opcional)
+
+    let query = `
+        SELECT ag.idAgendamentos, ag.data AS dia, ag.horaInicio, ag.horaFim, ag.descricao,
+            pr.primeiroNome AS primPr, pr.ultimoNome AS ultPr, pac.primeiroNome AS primPac, pac.ultimoNome AS ultPac
+        FROM bancoapae6.agendamentos AS ag
+        INNER JOIN profissionais AS pr
+            ON ag.Profissionais_id_FK = pr.idProfissionais
+        INNER JOIN pacientes AS pac
+            ON ag.Pacientes_id_FK = pac.idPacientes
+        WHERE ag.Profissionais_id_FK = ?`;
+
+    // Se a data de filtro foi fornecida, adiciona um filtro na query
+    if (dataFiltro) {
+        query += ` AND ag.data = ?`;  // Filtro pela data exata
+    } else {
+        query += ` AND ag.data < CURDATE()`;  // Caso contrário, filtra apenas os agendamentos passados (anterior ao dia de hoje)
+    }
+
+    query += ` ORDER BY ag.data ASC, ag.horaInicio ASC;`;
+
+    const params = dataFiltro ? [profissionalId, dataFiltro] : [profissionalId];
+
+    pool.query(query, params, (error, results) => {
+        if (error) {
+            return res.status(500).json({ error: 'Erro ao carregar agendamentos' });
+        }
+
+        res.json(results);  // Retorna dados para o front-end
+    });
+});
+
 
 
 module.exports = router;

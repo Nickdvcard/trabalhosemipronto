@@ -159,6 +159,11 @@ export default function CreateAgendamento() {
   const handleCreateAgendamento = async (e) => {
     e.preventDefault();
 
+    if (!agendamento.paciente || !agendamento.descricao || !agendamento.data || !agendamento.horaInicio || !agendamento.horaFim) {
+      alert("Todos os campos obrigatórios devem ser preenchidos.");
+      return;
+    }
+
     // 1. Verifica se a hora de fim é maior que a hora de início
      if (agendamento.horaFim <= agendamento.horaInicio) {
         alert("A hora de fim deve ser maior que a hora de início.");
@@ -213,6 +218,8 @@ export default function CreateAgendamento() {
 
   return (
     <>
+            <NavAdmin />
+            <MenuUsers />
       {/* Cabeçalho e conteúdo do formulário */}
       <div
         className="d-flex justify-content-center p-4"

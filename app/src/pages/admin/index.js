@@ -1,4 +1,4 @@
-import MenuAdmin from '@/components/MenuAdmin'
+import MenuUsers from '@/components/MenuUsers'
 import NavAdmin from '@/components/NavAdmin'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -13,7 +13,7 @@ export default function admin() {
       </Head>
       <div>
         <NavAdmin />
-        <MenuAdmin />
+        <MenuUsers />
       </div>
   
       <div className="d-flex justify-content-center p-2">

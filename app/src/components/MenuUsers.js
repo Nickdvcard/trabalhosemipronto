@@ -8,17 +8,17 @@ export default function MenuUsers() {
                     <Link className="nav-link active text-dark" href="/admin">
                         <strong>Admin</strong>
                     </Link>
-                    <Link className="nav-link text-dark" href="/admin/users">
-                        Usuários
-                    </Link>
-                    <Link className="nav-link text-dark" href="/admin/users/create">
-                        Novo Usuário
-                    </Link>
                     <Link className="nav-link text-dark" href="/admin/pacientes">
                         Pacientes
                     </Link>
                     <Link className="nav-link text-dark" href="/admin/profissionais">
                         Profissionais
+                    </Link>
+                    <Link className="nav-link text-dark" href="/admin/profissoes">
+                        Profissoes
+                    </Link>
+                    <Link className="nav-link text-dark" href="/admin/condicoes">
+                        Condicoes
                     </Link>
                 </div>
             </div>

@@ -165,6 +165,11 @@ export default function EditAgendamento() {
   const handleEditAgendamento = async (e) => {
     e.preventDefault();
 
+    if (!agendamento.paciente || !agendamento.descricao || !agendamento.data || !agendamento.horaInicio || !agendamento.horaFim) {
+      alert("Todos os campos obrigatórios devem ser preenchidos.");
+      return;
+    }
+
     if (agendamento.horaFim <= agendamento.horaInicio) {
       alert('A hora de fim deve ser maior que a hora de início.');
       return;
@@ -204,6 +209,8 @@ export default function EditAgendamento() {
 
   return (
     <>
+            <NavAdmin />
+            <MenuUsers />
       <div className="d-flex justify-content-center p-4" style={{ backgroundColor: "#f7f7f7", minHeight: "100vh" }}>
         <div className="container">
           <div className="row mb-4 pb-3" style={{ borderBottom: "1px solid #a0a0a0" }}>

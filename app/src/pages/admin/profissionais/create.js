@@ -81,6 +81,22 @@ export default function CreateProfissional() {
   };
 
   const handleCreateProfissional = async () => {
+  // Validação dos campos obrigatórios
+  if (!profissional.primeiroNome || !profissional.ultimoNome || !profissional.pedagogo || !profissional.profissao || !profissional.horarios) {
+    setMessage({ message: "Todos os campos devem ser preenchidos!", status: "error" });
+    return;
+  }
+
+  // Verificação dos períodos
+  if (numPeriodos > 0) {
+    for (let i = 0; i < numPeriodos; i++) {
+      if (!periodos[i].dia || !periodos[i].horaInicio || !periodos[i].horaFim) {
+        setMessage({ message: `Período ${i + 1} não está completo!`, status: "error" });
+        return;
+      }
+    }
+  }
+
     try {
       console.log(profissional);
       await Axios.post(API_URL, profissional);
@@ -179,6 +195,7 @@ export default function CreateProfissional() {
                 className="form-control"
                 value={numPeriodos}
                 onChange={handleNumPeriodosChange}
+                min="0"
                 required
               />
             </div>

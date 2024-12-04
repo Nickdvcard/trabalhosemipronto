@@ -1,0 +1,100 @@
+/* Corpo da página */
+.login-body {
+    display: flex;              /* Define layout flexível */
+    justify-content: center;    /* Centraliza horizontalmente */
+    align-items: center;        /* Centraliza verticalmente */
+    min-height: 100vh;          /* Ocupa 100% da altura da janela */
+    background: #fff;           /* Cor de fundo */
+    margin: 0;                  /* Remove margens padrão */
+    padding: 0;                 /* Remove preenchimento padrão */
+}
+
+/* Seção da caixa de login */
+.login-box {
+    width: 400px;               /* Largura da caixa */
+    max-width: 90%;             /* Garante que ela não ultrapasse 90% em telas pequenas */
+    padding: 40px;              /* Espaçamento interno */
+    background-color: #fff;     /* Cor de fundo */
+    border-radius: 10px;        /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+    display: flex;              /* Centraliza o conteúdo interno */
+    flex-direction: column;     /* Organiza o conteúdo verticalmente */
+    justify-content: center;    /* Centraliza o conteúdo */
+    align-items: center;        /* Centraliza o conteúdo */
+}
+
+/* Cabeçalho de login */
+.login-header {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.login-header h2 {
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* Estilo dos campos de entrada */
+.input-field {
+    width: 100%;
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    outline: none;
+}
+
+/* Botão de envio */
+.submit-btn {
+    width: 100%;
+    height: 60px;
+    background: #43aeba;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #56c3cf;
+}
+
+/* Link de voltar */
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #515860;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.success-message {
+    color: green;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%;      /* Ajusta a largura para dispositivos menores */
+        height: auto;    /* Deixa a altura ajustada ao conteúdo */
+    }
+}

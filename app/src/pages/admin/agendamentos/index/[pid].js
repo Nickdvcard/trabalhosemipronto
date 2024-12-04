@@ -45,7 +45,7 @@ export default function agendamentos() {
       <div className="d-flex justify-content-center p-4" style={{ background: 'linear-gradient(45deg, #ffffff, #d4edda)',  minHeight: '100vh'}}>
         <div className="container">
           <div className="row mb-4 pb-3" style={{ borderBottom: '1px solid #a0a0a0' }}>
-            <h3 className="text-success">Lista de Agendamentos</h3>
+            <h3 className="text-success">Lista de Agendamentos a serem feitos </h3>
           </div>
   
           <div className="d-flex justify-content-center mb-4">
@@ -57,6 +57,12 @@ export default function agendamentos() {
           <div className="d-flex justify-content-center mb-4">
             <Link className="nav-link" href={`/admin/agendamentos/indexAntigo/${pid}`}>
               <button className="btn btn-success btn-lg p-3">Visualizar Agendamentos Passados</button>
+            </Link>
+          </div>
+
+          <div className="d-flex justify-content-center mb-4">
+            <Link className="nav-link" href={`/admin/agendamentos/indexDia/${pid}`}>
+              <button className="btn btn-success btn-lg p-3">Filtrar agendamentos por dia</button>
             </Link>
           </div>
   

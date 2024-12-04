@@ -1,0 +1,172 @@
+/* Estilo principal do navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center;           /* Centraliza verticalmente */
+    background: #c7e2e4;           /* Cor de fundo */
+    padding: 30px 20px;            /* Espaçamento interno */
+}
+
+/* Estilo do título da navbar */
+.navbarBrand {
+    text-decoration: none;         /* Remove sublinhado */
+}
+
+.navbarBrand h2 {
+    font-size: 24px;               /* Tamanho do texto */
+    font-weight: bold;             /* Negrito */
+    color: #212529;                /* Cor do texto */
+    margin: 0;                     /* Remove margens padrão */
+}
+
+/* Estilo do botão de login */
+.btnSuccess {
+    background-color: #43aeba;     /* Cor de fundo */
+    color: #fff;                   /* Cor do texto branco */
+    padding: 10px 20px;            /* Espaçamento interno */
+    border: none;                  /* Remove bordas */
+    border-radius: 5px;            /* Bordas arredondadas */
+    font-size: 16px;               /* Tamanho do texto */
+    text-decoration: none;         /* Remove sublinhado */
+    transition: background-color 0.3s ease; /* Transição ao passar o mouse */
+}
+
+.btnSuccess:hover {
+    background-color: #56c3cf;     /* Cor mais escura ao passar o mouse */
+    cursor: pointer;               /* Mostra o cursor de clique */
+}
+
+/* Estilo da imagem como background */
+.imageContainer {
+    width: 100%;                   /* Faz a imagem ocupar toda a largura */
+    height: 400px;                 /* Define uma altura fixa para a imagem */
+    background-image: url('/'); /* Substitua pelo caminho correto da sua imagem */
+    background-size: cover;        /* Faz a imagem cobrir todo o container */
+    background-position: center;   /* Centraliza a imagem no container */             /* Espaço entre o navbar e a imagem */
+    border-radius: 5px;            /* Bordas arredondadas (opcional) */
+}
+.cardContainer > h3 {
+    text-align: center;  /* Centraliza o texto horizontalmente */
+    margin-bottom: 20px; /* Espaço entre o título e os cards */
+    font-size: 24px;     /* Ajusta o tamanho do texto */
+    color: #212529;      /* Cor do texto */
+    font-weight: bold;   /* Negrito */
+}
+
+/* Estilo para a mensagem acima dos cards */
+.messageContainer {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin: 10px auto;  /* Espaço externo acima e abaixo */
+    padding: 10px;      /* Espaço interno */
+}
+
+.mainMessage {
+    font-size: 28px;    /* Tamanho maior para destacar */
+    font-weight: bold;  /* Negrito */
+    color: #212529;     /* Cor do texto */
+}
+
+
+/* Container dos cards */
+.cardContainer {
+    display: flex;
+    justify-content: space-between;       /* Centraliza os cards */
+    align-items: stretch;          /* Alinha os cards em altura */
+    margin: 20px auto; 
+    margin-top: 15px;            /* Espaçamento externo centralizado */
+    max-width: 1200px;             /* Largura máxima da linha de cards */
+    padding: 10px;                 /* Espaçamento interno */
+    gap: 20px;                     /* Espaço entre os cards */
+}
+
+/* Estilo de cada card */
+.card {
+    flex: 1;                       /* Cada card ocupa o mesmo espaço */
+    background-color: #ffffff;     /* Fundo branco */
+    border-radius: 10px;           /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;            /* Centraliza conteúdo do card */
+    padding: 15px;                 /* Espaçamento interno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo das imagens específicas de cada card */
+.cardImage1 {
+    background-image: url('../../public/image/diadoidoso.jpg'); /* Caminho da imagem do primeiro card */
+}
+
+.cardImage2 {
+    background-image: url('../../public/image/apaenacional.jpg'); /* Caminho da imagem do segundo card */
+}
+
+.cardImage3 {
+    background-image: url('../../public/image/diasecretaria.jpg'); /* Caminho da imagem do terceiro card */
+}
+
+/* Estilo comum para as imagens nos cards */
+.cardImage {
+    width: 100%;
+    height: 340px;                 /* Altura fixa da imagem */
+    background-size: cover;        /* Ajusta o tamanho da imagem */
+    background-position: center;   /* Centraliza a imagem no container */
+    border-radius: 10px;           /* Bordas arredondadas */
+    margin-bottom: 15px;           /* Espaço entre imagem e texto */
+}
+
+/* Estilo do título do card */
+.card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #212529;
+    margin-bottom: 10px;
+}
+
+/* Estilo da descrição do card */
+.card p {
+    font-size: 14px;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+/* Efeito de hover no card */
+.card:hover {
+    transform: scale(1.05);        /* Leve aumento no tamanho */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .cardContainer {
+        flex-direction: column;    /* Cards empilhados em telas menores */
+    }
+
+    .card {
+        margin-bottom: 20px;       /* Espaço entre os cards no modo empilhado */
+    }
+
+    .cardImage {
+        height: 200px;             /* Ajusta altura da imagem para telas menores */
+    }
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;    /* Itens em coluna */
+        text-align: center;        /* Centraliza o texto */
+    }
+
+    .navbarBrand h2 {
+        font-size: 20px;           /* Reduz tamanho do texto */
+    }
+
+    .btnSuccess {
+        margin-top: 10px;          /* Espaço acima do botão */
+        width: 100%;               /* Botão ocupa toda a largura */
+    }
+
+    .imageContainer {
+        height: 250px;             /* Ajusta a altura da imagem para telas menores */
+    }
+}

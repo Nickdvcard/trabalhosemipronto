@@ -15,10 +15,8 @@ app.use(function(req, res, next){ //
     next();
    }); //
 
-
 app.use('/api', routes)
 
-
-
 app.listen(8080, function () { 
-    console.log('Aplicação executando na porta 8080!'); }); 
+    console.log('Aplicação executando na porta 8080!'); 
+}); 

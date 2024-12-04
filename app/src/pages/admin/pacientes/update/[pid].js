@@ -106,6 +106,11 @@ export default function EditPaciente() {
   };
 
   const handleUpdatePaciente = async () => {
+    if (!paciente.first_name || !paciente.last_name || !paciente.teacher || !paciente.condition || !paciente.uf || !paciente.cidade || !paciente.bairro) {
+      setMessage({ message: "Todos os campos devem ser preenchidos!", status: "error" });
+      return;
+    }
+    
     try {
       console.log("antes do envio: ", paciente);
       const response = await Axios.put(API_URL + pid, paciente);
